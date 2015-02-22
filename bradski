@@ -1,0 +1,22 @@
+<?php
+/*
+Plugin Name: Simple (yet complex) Naming Widget
+Description: Inputs age, first name and last name
+Author: Dusan Miletic
+Influential web developer: Josh Leuze
+*/
+/*
+Here I am naming classes in order to not overlap with functions and other future variables. I am choosing
+to name the following widget as Simple_Widget. This will be a subset of the WP_Widget
+*/
+class Simple_Widget extends WP_Widget {
+ 
+   /* This code will register the Widget through wordpress and create the widgets name through the parent. 
+   the widget becomes diffined within the array.  this is so people interested in using it will understand its function. 
+   */
+    function __construct() {
+        parent::__construct(
+            'name', // Base ID
+            __('Name Widget', 'simple_widget'), // Name
+            array( 'description' => __( 'A widget for adding your first name, last name and age.', 'simple_widget' ), ) // Args
+        );
